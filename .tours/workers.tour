@@ -1,0 +1,71 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "workers",
+  "steps": [
+    {
+      "file": "back/src/app.controller.ts",
+      "description": "aqui inicia o sse (server side events).\n\nServer-Side Events (SSE) é uma tecnologia que permite aos navegadores receber atualizações automáticas de um servidor via conexão HTTP",
+      "line": 11
+    },
+    {
+      "file": "back/src/app.service.ts",
+      "description": "usando o typeorm para gerar uma stream de dados do banco de dados, fazendo com que seja enviado um dado por vez para o front",
+      "line": 19
+    },
+    {
+      "file": "back/src/app.service.ts",
+      "description": "começa a stream dos dados e envia 1 por um para o evento q o front está ouvindo",
+      "line": 26
+    },
+    {
+      "file": "back/src/app.service.ts",
+      "description": "quando finaliza, envia para o front um evento de close",
+      "line": 40
+    },
+    {
+      "file": "back/src/entity.ts",
+      "description": "essa eh a entidade q esta sendo retornada do banco de dados. existem 1 milhao de registros lá! ",
+      "line": 4
+    },
+    {
+      "file": "front/src/App.tsx",
+      "description": "iniciando um novo worker",
+      "line": 10
+    },
+    {
+      "file": "front/src/App.tsx",
+      "description": "envia uma mensagem para o worker pra iniciar o processamento das mensagens",
+      "line": 15
+    },
+    {
+      "file": "front/src/excelWorker.ts",
+      "description": "inicia um novo eventSource",
+      "line": 13
+    },
+    {
+      "file": "front/src/excelWorker.ts",
+      "description": "comitta as linhas a medida q elas chegam",
+      "line": 16
+    },
+    {
+      "file": "front/src/excelWorker.ts",
+      "description": "quando o back envia o evento de finalizar a stream o front inicia a criação do arquivo excel",
+      "line": 24
+    },
+    {
+      "file": "front/src/App.tsx",
+      "description": "quando o worker envia o evento de \"PROGRESS\" ele atualiza o estado de progress para mostrar na tela",
+      "line": 18
+    },
+    {
+      "file": "front/src/App.tsx",
+      "description": "quando o worker envia o evento de \"EXCEL_READY\" ele baixa o arquivo",
+      "line": 21
+    },
+    {
+      "file": "front/src/App.tsx",
+      "description": "função executada quando um usuario clica no botão de \"Download Report\"",
+      "line": 12
+    }
+  ]
+}
